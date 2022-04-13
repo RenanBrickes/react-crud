@@ -21,7 +21,7 @@ export const theme = {
         size: {
             //Padrão REM - 16px
             small: '1.6rem',
-            medium: '3.1rem'
+            medium: '3.2rem'
         }
     },
     colors: {
@@ -31,6 +31,14 @@ export const theme = {
         update : "#3333ff",
         delete: "#ff3333",
         cancel : "#ffff33",
+    },
+    buttons : { 
+        maxsize : '8.0rem',
+    },
+    sizes : {
+        medium : '3.2rem',
+        large : '4.8rem',
+        xlarge : '6.4rem'
     }
 }
 
