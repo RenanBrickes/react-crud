@@ -1,8 +1,6 @@
-import { css } from 'styled-components';
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     html {
         margin : 0;
         padding : 0;
@@ -38,7 +36,8 @@ export const theme = {
     sizes : {
         medium : '3.2rem',
         large : '4.8rem',
-        xlarge : '6.4rem'
+        xlarge : '6.4rem',
+        xxlarge : '8.0rem'
     }
 }
 
