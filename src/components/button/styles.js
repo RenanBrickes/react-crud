@@ -24,6 +24,7 @@ export const Button = styled.button`
         word-break: break-all;
         max-width: ${theme.sizes.xlarge};
         border-radius : 50px;
+        font-size: 1.2rem;
         font-family : ${theme.font.family};
         border: none;
         transition: all 300ms ease-in-out;

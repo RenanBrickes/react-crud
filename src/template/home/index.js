@@ -1,8 +1,19 @@
+import { Table } from '../../components/table/index';
+import { GridButton } from '../../components/gridbutton/index';
+import { mockDados } from '../../components/table/mock';
+import { useEffect, useState } from 'react';
+
 function App() {
+    const [dados, setDados] = useState([]);
+
+    useEffect(() => {
+        setDados(mockDados);
+    },[]);
+
     return (
-        <div>
-            <h1>Hellow word</h1>
-        </div>
+        <Table dados={dados}>
+            <GridButton />
+        </Table>
     );
 }
 
