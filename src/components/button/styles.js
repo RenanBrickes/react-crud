@@ -22,9 +22,9 @@ export const Button = styled.button`
         color : ${theme.colors.primary};
         text-align: center;
         word-break: break-all;
-        max-width: ${theme.sizes.xlarge};
+        width: ${theme.sizes.xxlarge};
         border-radius : 50px;
-        font-size: 1.2rem;
+        font-size: 16px;
         font-family : ${theme.font.family};
         border: none;
         transition: all 300ms ease-in-out;
