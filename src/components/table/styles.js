@@ -21,3 +21,26 @@ export const Table = styled.table`
         tbody > tr:hover {background-color: #ddd;}
     `}
 `;
+
+export const Carregando = styled.div`
+    ${(theme) => css`
+        border : 2px solid blue;
+        border-bottom:transparent;
+        border-left:transparent;
+        width : 50px;
+        height : 50px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: 50%;
+        border-radius: 50%;
+        animation: is-rotating 1s infinite;
+
+        @keyframes is-rotating {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    `}
+`;
