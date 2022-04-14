@@ -3,7 +3,7 @@ import * as P from 'prop-types';
 
 import { Container } from '../container/index';
 
-export const Table = ({ dados }) => {
+export const Table = ({ dados, children }) => {
     return (
         <Container>
             <Styled.Table>
@@ -26,6 +26,7 @@ export const Table = ({ dados }) => {
                     ))}
                 </tbody>
             </Styled.Table>
+            {children}
         </Container>
 
     );
@@ -37,5 +38,6 @@ Table.propTypes = {
         telefone: P.string.isRequired,
         cidade: P.string.isRequired,
         sexo: P.string.isRequired
-    })).isRequired
+    })).isRequired,
+    children : P.node.isRequired
 }
