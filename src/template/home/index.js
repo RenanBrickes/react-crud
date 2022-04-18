@@ -2,6 +2,7 @@ import { Table } from '../../components/table/index';
 import { GridButton } from '../../components/gridbutton/index';
 import { useEffect, useState } from 'react';
 import { Read } from '../../api/api';
+import { Form } from '../../components/form/index';
 
 function App() {
     const [dados, setDados] = useState([]);
@@ -25,8 +26,8 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             getUsers();
-            
-        },2000);
+
+        }, 2000);
     }, []);
 
 
@@ -34,6 +35,7 @@ function App() {
 
         <Table dados={dados} carregando={carregando}>
             <GridButton />
+            {/* <Form /> */}
         </Table>
     );
 }

@@ -1,5 +1,4 @@
 import * as Styled from './styles';
-import * as P from 'prop-types';
 import { Button } from '../button/index';
 import { Container } from '../container/index';
 

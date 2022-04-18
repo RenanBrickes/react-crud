@@ -8,3 +8,18 @@ export const Read = async () => {
    const usuarioJson = await usuarios.json();
    return { ...usuarioJson };
 }
+
+export const Create = async (dados) => {
+   var myHeaders = new Headers();
+   myHeaders.append("Accept", "application/json");
+   myHeaders.append("Content-Type", "application/json");
+
+   var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: JSON.stringify(dados),
+   };   
+   const fetchPost = await fetch(`${urlAPI}/create`, requestOptions);
+   const reponseJson = await fetchPost.json();
+   return reponseJson;
+}

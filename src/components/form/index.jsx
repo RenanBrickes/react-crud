@@ -1,27 +1,37 @@
 import * as Styled from './styles';
-import * as P from 'prop-types';
 import { Container } from '../container/index';
 import { useState } from 'react';
 import { Button } from '../button/index';
 import Swal from 'sweetalert2';
-export const Form = ({ }) => {
+import { Create } from '../../api/api';
+export const Form = () => {
     const [dados, setDados] = useState({
         nome: "",
         email: "",
         telefone: "",
-        cidade: 0,
+        celular: "",
+        cidade: 1,
         sexo: ""
     });
 
-    const handleValidate = (event) => {
+    const handleValidate = async (event) => {
         event.preventDefault();
-        if (dados.nome == "" || dados.email == "" || dados.telefone == "" || dados.cidade == "" || dados.sexo == "")
+        if (dados.nome === "" || dados.email === "" || dados.telefone === "" || dados.cidade === "" || dados.sexo === "")
             Swal.fire({
                 title: 'Erro!',
                 text: 'A dados invalidos, por favor, vefique!',
                 icon: 'error',
                 confirmButtonText: 'Ok'
             });
+        else {
+            const response = await Create(dados);
+            Swal.fire({
+                title: "Atenção !",
+                text: response.mensagem,
+                icon: 'info',
+                confirmButtonText: 'Ok'
+            });
+        }
     }
 
     const handleChange = (event) => {
@@ -32,7 +42,7 @@ export const Form = ({ }) => {
 
     return (
         <Container>
-            <Styled.Form onSubmit={handleValidate} valido={valido} >
+            <Styled.Form onSubmit={handleValidate} >
                 <input type='text'
                     name='nome'
                     onChange={(event) => handleChange(event)}
@@ -47,6 +57,7 @@ export const Form = ({ }) => {
                 <input type='number'
                     name='telefone'
                     placeholder='19 9 9650-3040'
+                    onChange={(event) => handleChange(event)}
                     required />
                 <select name='cidade'
                     required

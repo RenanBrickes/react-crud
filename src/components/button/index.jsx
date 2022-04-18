@@ -11,6 +11,5 @@ export const Button = ({ text, type = 'button' }) => {
 
 Button.propTypes = {
     text: P.string.isRequired,
-    text: P.string,
-
+    type : P.string
 }
