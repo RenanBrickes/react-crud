@@ -2,7 +2,8 @@ import { Table } from '../../components/table/index';
 import { GridButton } from '../../components/gridbutton/index';
 import { useEffect, useState } from 'react';
 import { Read } from '../../api/api';
-import { Form } from '../../components/form/index';
+import Swal from 'sweetalert2';
+
 
 function App() {
     const [dados, setDados] = useState([]);
@@ -19,23 +20,24 @@ function App() {
                 }
             })
             .catch((err) => {
-
+                Swal.fire({
+                    title: "Ops !",
+                    text: "Não foi possivél carregar os dados, tente novamente ou mais!",
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+                    .then(() => window.location.reload());
             });
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            getUsers();
-
-        }, 2000);
+        getUsers();
     }, []);
 
 
     return (
-
         <Table dados={dados} carregando={carregando}>
             <GridButton />
-            {/* <Form /> */}
         </Table>
     );
 }
