@@ -14,6 +14,7 @@ export const Form = () => {
         sexo: ""
     });
 
+
     const handleValidate = async (event) => {
         event.preventDefault();
         if (dados.nome === "" || dados.email === "" || dados.telefone === "" || dados.cidade === "" || dados.sexo === "")
@@ -30,7 +31,7 @@ export const Form = () => {
                 text: response.mensagem,
                 icon: 'info',
                 confirmButtonText: 'Ok'
-            });
+            }).then(() => window.location.reload());
         }
     }
 
@@ -79,5 +80,4 @@ export const Form = () => {
 }
 
 Form.propTypes = {
-
 }

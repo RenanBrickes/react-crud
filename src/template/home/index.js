@@ -16,7 +16,12 @@ function App() {
                     setCarregando(false);
                 }
                 else {
-
+                    Swal.fire({
+                        title: "Ops !",
+                        text: valor.mensagem,
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
             .catch((err) => {
@@ -36,9 +41,10 @@ function App() {
 
 
     return (
-        <Table dados={dados} carregando={carregando}>
+        <>
+            <Table dados={dados} carregando={carregando} />
             <GridButton />
-        </Table>
+        </>
     );
 }
 

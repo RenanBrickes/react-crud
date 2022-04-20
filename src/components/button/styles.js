@@ -10,6 +10,8 @@ const changeColor = (theme, text) => {
             return theme.colors.delete;
         case "cancelar":
             return theme.colors.cancel;
+            case "detalhe":
+            return theme.colors.detalhe;
         default:
             return theme.colors.create;
     }

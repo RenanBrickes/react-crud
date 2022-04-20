@@ -29,6 +29,7 @@ export const theme = {
         update : "#3333ff",
         delete: "#ff3333",
         cancel : "#ffff33",
+        detalhe : "#800080"
     },
     buttons : { 
         maxsize : '8.0rem',
